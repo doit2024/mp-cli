@@ -11,7 +11,7 @@ program.parse(process.argv)
 const target = program.args[0]
 if (!target) logger.fatal('请指定项目名')
 
-const template = 'niuDazhuang/gp'
+const template = 'niuDazhuang/webpack4_demo'
 const clone = false
 
 const spinner = ora('downloading template')
