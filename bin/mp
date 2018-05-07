@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+const download = require('download-git-repo')
+const program = require('commander')
+const exists = require('fs').existsSync
+const ora = require('ora')
+const rm = require('rimraf').sync
+const logger = require('../lib/logger')
+
+program.parse(process.argv)
+const target = program.args[0]
+if (!target) logger.fatal('请指定项目名')
+
+const template = 'niuDazhuang/gp'
+const clone = false
+
+const spinner = ora('downloading template')
+spinner.start()
+if (exists(target)) rm(target)
+download(template, target, { clone }, err => {
+  spinner.stop()
+  if (err) logger.fatal('Failed to download repo ' + template + ': ' + err.message.trim())
+  logger.success('Generated "%s".', target)
+})

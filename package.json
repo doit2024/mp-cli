@@ -1,0 +1,26 @@
+{
+  "name": "mp-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "mp": "./bin/mp"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack4",
+    "mutiple page",
+    "cli"
+  ],
+  "author": "邓维敏",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.15.1",
+    "download-git-repo": "^1.0.2",
+    "ora": "^2.1.0",
+    "rimraf": "^2.6.2"
+  }
+}
